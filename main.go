@@ -51,7 +51,7 @@ func (h *portsHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 func (h *portsHandler) Create(w http.ResponseWriter, r *http.Request) {
 	var p ports
-	if err := json.NewDecoder(r.Body).Decode(&u); err != nil {
+	if err := json.NewDecoder(r.Body).Decode(&p); err != nil {
 		internalServerError(w, r)
 		return
 	}
